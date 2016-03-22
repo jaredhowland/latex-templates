@@ -1,0 +1,269 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{bringhurst}[2016/03/19 Provides styles to format a book similar to Bringhurst's "The Elements of Typographic Style"]
+
+\usepackage[protrusion=true, final]{microtype}
+
+\sloppybottom
+
+% set \clubpenalty, etc. to distinctive values for use
+% in tracing page breaks. These values are chosen so that
+% no single penalty will absolutely prohibit a page break, but
+% certain combinations of two or more will.
+\clubpenalty=9996
+\widowpenalty=9999
+\brokenpenalty=4991
+% Reiterate the default value of \redisplaypenalty, for
+% completeness.
+% Set postdisplaypenalty to a fairly high value to discourage a
+% page break between a display and a widow line at the end of a
+% paragraph.
+\predisplaypenalty=10000
+\postdisplaypenalty=1549
+% And then \displaywidowpenalty should be at least as high as
+% \postdisplaypenalty, otherwise in a situation where two displays
+% are separated by two lines, TeX will prefer to break between the
+% two lines, rather than before the first line.
+\displaywidowpenalty=1602
+
+\usepackage{xfrac} % For slanted fractions that are displayed inline with text
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Define size of paper
+% and margins
+%
+% Margin proportions based on
+% Robert Bringhurst's "The Elements
+% of Typographic Style"
+%
+% Based on Lulu.com options
+% 
+% Uncomment the one you want to use
+%%%%%%%%%%%%%%%%%%%%%%
+% %%%% Digest
+%     \setstocksize{8.5in}{5.5in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.52in}{1.31in}{*}
+%     \setulmarginsandblock{0.71in}{1.18in}{*}
+% 
+% %%%% US letter
+%     \setstocksize{11in}{8.5in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.81in}{2.02in}{*}
+%     \setulmarginsandblock{0.92in}{1.53in}{*}
+% 
+% %%%% Pocket book
+%     \setstocksize{6.87in}{4.25in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.4in}{1.01in}{*}
+%     \setulmarginsandblock{0.57in}{0.95in}{*}
+% 
+% %%%% A5
+%     \setstocksize{8.26in}{5.83in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.56in}{1.39in}{*}
+%     \setulmarginsandblock{0.69in}{1.15in}{*}
+% 
+% %%%% US trade
+      \setstocksize{9in}{6in}
+      \settrimmedsize{\stockheight}{\stockwidth}{*}
+  	  \setlrmarginsandblock{0.7in}{1.3in}{*}
+      \setulmarginsandblock{0.75in}{1.25in}{*}
+% 
+%%%% Royal
+    % \setstocksize{9.21in}{6.13in}
+    % \settrimmedsize{\stockheight}{\stockwidth}{*}
+    % \setlrmarginsandblock{0.58in}{1.46in}{*}
+    % \setulmarginsandblock{0.77in}{1.28in}{*}
+% 
+% %%%% Comic book
+%     \setstocksize{10.25in}{6.625in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.63in}{1.58in}{*}
+%     \setulmarginsandblock{0.85in}{1.42in}{*}
+% 
+% %%%% Crown quarto
+%     \setstocksize{9.68in}{7.44in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.71in}{1.77in}{*}
+%     \setulmarginsandblock{0.81in}{1.34in}{*}
+% 
+% %%%% Small square
+%     \setstocksize{7.5in}{7.5in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.71in}{1.79in}{*}
+%     \setulmarginsandblock{0.63in}{1.04in}{*}
+% 
+% %%%% A4
+%     \setstocksize{11.69in}{8.26in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.79in}{1.97in}{*}
+%     \setulmarginsandblock{0.97in}{1.62in}{*}
+% 
+% %%%% Square
+%     \setstocksize{8.5in}{8.5in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.81in}{2.02in}{*}
+%     \setulmarginsandblock{0.71in}{1.18in}{*}
+% 
+% %%%% Landscape
+%     \setstocksize{7in}{9in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.86in}{2.14in}{*}
+%     \setulmarginsandblock{0.58in}{0.97in}{*}
+% 
+% %%%% 8.25 x 10.75
+%     \setstocksize{10.75in}{8.25in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.79in}{1.96in}{*}
+%     \setulmarginsandblock{0.9in}{1.49in}{*}
+% 
+% %%%% Large landscape
+%     \setstocksize{10.75in}{12.75in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{1.21in}{3.04in}{*}
+%     \setulmarginsandblock{0.9in}{1.49in}{*}
+% 
+% %%%% Large square
+%     \setstocksize{12in}{12in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{1.14in}{2.86in}{*}
+%     \setulmarginsandblock{1in}{1.67in}{*}
+%
+% %%%% Bringhurst
+%          Proportions used in Robert Bringhurst's
+%          "The Elements of Typographic Style"
+%          NOT actually a Lulu.com option at present
+%     \setstocksize{9in}{5.25in}
+%     \settrimmedsize{\stockheight}{\stockwidth}{*}
+%     \setlrmarginsandblock{0.5in}{1.25in}{*}
+%     \setulmarginsandblock{0.75in}{1.25in}{*}
+
+\setheadfoot{0in}{3\onelineskip}
+\checkandfixthelayout
+\checkthelayout
+\fixthelayout
+\fixpdflayout
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Allow system fonts to be used
+%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Family Tree
+%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{pstricks, pst-node, pst-tree}
+\renewcommand\psedge{\nccurve}
+\newcommand{\Female}[2][]{{\psset{linecolor=black}\TR[#1]{#2}}}
+\newcommand{\Male}[2][]{{\psset{linecolor=black}\TR[#1]{#2}}}
+\psset{levelsep=1.25cm, nodesep=2pt, angleA=90, angleB=-90}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Typeset poetry
+%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\poemtitlefont}{\normalfont\large\itshape\centering}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Custom \part page
+%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\partnamefont}{\itshape\raggedleft}
+\renewcommand{\partnumfont}{\itshape}
+\renewcommand{\parttitlefont}{\itshape}
+\aliaspagestyle{part}{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Make label ragged right
+%%%%%%%%%%%%%%%%%%%%%%
+\captiontitlefont{\raggedright}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Customize Table of Contents
+%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\setupshorttoc} {%
+
+    % Only show chapters and above in ToC
+    \setcounter{tocdepth}{0}
+
+    % Remove chapter numbers from the ToC
+    \renewcommand{\partnumberline}[1]{}
+    \renewcommand{\chapternumberline}[1]{}
+    
+    % Format parts in ToC
+    \renewcommand*{\cftpartfont}{\hfill\sffamily\itshape\Large}
+    \renewcommand*{\cftpartleader}{\space\textperiodcentered\space}
+    \renewcommand*{\cftpartafterpnum}{\cftparfillskip}
+    \renewcommand*{\cftpartfillnum}[1] {%
+        {\cftpartleader}\nobreak
+        \hbox to 1.5em{\itshape ##1\hfil}\cftpartafterpnum\par
+    }
+    
+    % Format chapters in ToC
+    \renewcommand*{\cftchapterfont}{\hfill\sffamily}
+    \renewcommand*{\cftchapterleader}{\space\textperiodcentered\space}
+    \renewcommand*{\cftchapterafterpnum}{\cftparfillskip}
+    \renewcommand*{\cftchapterfillnum}[1] {%
+        {\cftchapterleader}\nobreak
+        \hbox to 1.5em{\itshape ##1\hfil}\cftchapterafterpnum\par
+    }
+    \setrmarg{0.3\textwidth}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Bringhurst chapter style
+%%%%%%%%%%%%%%%%%%%%%%
+\makechapterstyle{bringhurst} {%
+    \renewcommand{\chapterheadstart}{}
+    \renewcommand{\printchaptername}{}
+    \renewcommand{\chapternamenum}{}
+    \renewcommand{\printchapternum}{}
+    \renewcommand{\afterchapternum}{}
+    \renewcommand{\printchaptertitle}[1] {%
+        \raggedright\LARGE\scshape\MakeLowercase{##1}
+    }
+    \renewcommand{\afterchaptertitle} {%
+        \vskip\onelineskip \hrule\vskip\onelineskip
+    }
+}
+\chapterstyle{bringhurst}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Bringhurst section style
+%%%%%%%%%%%%%%%%%%%%%%
+\setsecnumdepth{part}
+\setsecheadstyle{\raggedright\scshape\MakeLowercase}
+    \setbeforesecskip{-\onelineskip}
+    \setaftersecskip{\onelineskip}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Bringhurst subsection style
+%%%%%%%%%%%%%%%%%%%%%%
+\setsubsecheadstyle{\sethangfrom{\noindent ##1}\raggedright\itshape}
+    \setbeforesubsecskip{-\onelineskip}
+    \setaftersubsecskip{\onelineskip}
+    
+%%%%%%%%%%%%%%%%%%%%%%
+% Custom headers and footers
+%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{}
+
+\makepagestyle{bringhurst}
+    \makeevenfoot{bringhurst}{\thepage}{}{\itshape\leftmark}
+    \makeoddfoot{bringhurst}{\itshape\rightmark}{}{\thepage}
+\pagestyle{bringhurst}                        % Make this style the default on main text
+\aliaspagestyle{chapter}{bringhurst}          % Make this style the default for the first page of each chapter
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Custom \itemize
+%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{enumitem}
+% Align first item with left margin (bullet hangs into the margin)
+% Subsequent sub-items indent their default indent after that
+\setlist[1]{nolistsep,leftmargin=0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Drop caps to begin each chapter
+%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{lettrine}
+% Usage: \lettrine[lines=3,slope=-4pt,nindent=-4pt]{E}{xample}

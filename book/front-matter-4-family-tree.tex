@@ -1,0 +1,17 @@
+%%%%%%%%%%%%%%%%%%%%%%
+% Family tree
+%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Family Tree}
+\vspace{-1.25em}
+\begin{pspicture}(-5,-16.5)
+\nbput*[nrot=90]{
+\pstree[treemode=U,treesep=3mm]{\Female{{\bfseries \footnotesize Person Doe}}}{%
+\pstree{\Male{\footnotesize Father Doe}}{%
+    \pstree{\Male{\footnotesize Grandpa Doe}}{\Male{\footnotesize G-grandpa Doe}\Female{\footnotesize G-grandma Doe}}
+    \pstree{\Female{\footnotesize Grandma Doe}}{\Male{\footnotesize G-grandpa Doe}\Female{\footnotesize G-grandma Doe}}
+}
+\pstree{\Female{\footnotesize Mother Doe}}{%
+    \pstree{\Male{\footnotesize Grandpa Doe}}{\Male{\footnotesize G-grandpa Doe}\Female{\footnotesize G-grandma Doe}}
+    \pstree{\Female{\footnotesize Grandma Doe}}{\Male{\footnotesize G-grandpa Doe}\Female{\footnotesize G-grandma Doe}}}
+}}
+\end{pspicture}
