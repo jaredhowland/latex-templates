@@ -1,6 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % Family tree
 %%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\psedge{\nccurve}
+\newcommand{\Female}[2][]{{\psset{linecolor=black}\TR[#1]{#2}}}
+\newcommand{\Male}[2][]{{\psset{linecolor=black}\TR[#1]{#2}}}
+\psset{levelsep=1.25cm, nodesep=2pt, angleA=90, angleB=-90}
+
 \chapter{Family Tree}
 \vspace{-1.25em}
 \begin{pspicture}(-5,-16.5)

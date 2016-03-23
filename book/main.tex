@@ -1,23 +1,20 @@
-%%%%%%%%%%%%%%%%%%%%%%
-% Use the memoir class
-%%%%%%%%%%%%%%%%%%%%%%
-% \documentclass[10pt,showtrims,draft]{memoir} % Use this line when editing to identify problems
-\documentclass[10pt,final]{memoir} % Use this line to generate final press-ready document
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom bringhurst class
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[familytree]{bringhurst}
 
-\usepackage{bringhurst} % Use bringhurst.sty styles
-
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
 % Use system fonts
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \setmainfont[Scale=MatchUppercase,Numbers=OldStyle]{Minion Pro}   % Main body font
 \setsansfont[Scale=MatchUppercase]{Minion Pro}   % Headings font
 \setmonofont[Scale=MatchUppercase]{Inconsolata}  % Monospaced font (for setting code primarily)
                                                  % Can be downloaded from <http://www.levien.com/type/myfonts/inconsolata.html>
                                                  % Alternatively, use: \setmonofont[Scale=MatchUppercase]{Courier}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Begin document
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin front matter
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \frontmatter
@@ -26,26 +23,22 @@
 \input{front-matter-2-title.tex}
 \input{front-matter-3-copyright.tex}
 
-\halftitle
-\titlepage
-\copyrightpage
-
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
 % Table of Contents
-%%%%%%%%%%%%%%%%%%%%%%
-\setupshorttoc
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents*
 \thispagestyle{empty}
 
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
 % Family tree
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{front-matter-4-family-tree.tex}
 
-\mainmatter
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
 % Begin book
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
 \part{Part I}
 \chapter{Chapter 1}
     \input{1.Chapter.tex}
