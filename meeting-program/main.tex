@@ -1,0 +1,229 @@
+%%%%%%%%%%%%%%%%%%%%%%
+% Use the memoir class
+%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt,twocolumn]{memoir}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Define size of paper
+% and margins
+%%%%%%%%%%%%%%%%%%%%%%
+\setstocksize{8.5in}{11in}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\setlrmarginsandblock{0.5in}{0.5in}{*}
+\setulmarginsandblock{0.5in}{0.5in}{*}
+\setcolsepandrule{1in}{0pt}
+\checkandfixthelayout
+\checkthelayout
+\fixthelayout
+\fixpdflayout
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Allow system fonts to be used
+%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont[Numbers=OldStyle]{Minion Pro}
+% Always use italicized Minion Pro ampersand
+\let\amp\&
+\renewcommand\&{{\textnormal{\fontspec{Minion Pro}\itshape\amp}}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Custom \itemize
+%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{enumitem}
+% Align first item with left margin (bullet hangs into the margin)
+% Subsequent sub-items indent their default indent after that
+\setlist[1]{nolistsep,leftmargin=0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Make label align with image on front cover
+%%%%%%%%%%%%%%%%%%%%%%
+\changecaptionwidth
+\captionwidth{3.2in}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Mimic Church Logo
+%%%%%%%%%%%%%%%%%%%%%%
+\newfontfamily\smalllogo[Scale=0.9]{Goudy Trajan}
+\newfontfamily\largelogo[Scale=1.75]{Goudy Trajan}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Custom section for announcements
+%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\mysection}[1]{\noindent\textbf{\raggedright\scshape\MakeUppercase{#1}}\newline}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Table for new family information
+%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hhline}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Remove headers and footers
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Back Cover
+%%%%%%%%%%%%%%%%%%%%%%
+{\noindent\large\MakeUppercase{New Family Information}}
+
+\renewcommand{\tabcolsep}{0in}
+\noindent\begin{tabular}{>{\footnotesize}p{2in} p{0.1in} >{\footnotesize}p{1in} p{0.1in} >{\footnotesize}p{1.3in}}
+    & & \hspace{2.5em}/\hspace{2.25em}/\\
+    \hhline{-~-~-}
+    Full Name & & Birth Date & & Phone Number\\
+    & & \hspace{2.5em}/\hspace{2.25em}/\\
+    \hhline{-~-~-}
+    Full Name & & Birth Date & & Phone Number\\
+\end{tabular}
+\vspace{0.1em}
+\begin{tabular}{>{\footnotesize}p{0.45in} >{\footnotesize}p{2.05in} >{\footnotesize}p{0.35in} >{\footnotesize}p{1.65in}}
+    Address: & & Email: & \\
+    \hhline{~-~-}
+\end{tabular}
+\vspace{0.1em}
+\begin{tabular}{>{\footnotesize}p{1.3in} p{3.2in}}
+    Children (names \& ages): & \\
+    \hhline{~-}
+    &\\[0.1em]
+    \hhline{--}
+\end{tabular}
+\vspace{-1em}
+\begin{tabular}{>{\footnotesize}p{3in} p{1.5in}}
+    Individual or Family Talents, Interests, \& Previous Callings: & \\
+    \hhline{~-}
+    &\\[0.1em]
+    \hhline{--}
+    &\\[0.1em]
+    \hhline{--}
+\end{tabular}
+\vspace{0em}
+\begin{tabular}{>{\footnotesize}p{4.5in}}
+    \begin{center}\emph{Please return this information sheet to a member of the Bishopric}\end{center}\\
+\end{tabular}
+{\noindent\large\MakeUppercase{Ward Resources}}
+\begin{center}
+\renewcommand{\tabcolsep}{0.1in}
+\vspace{-1em}
+\noindent\begin{tabular}{>{\footnotesize}l >{\footnotesize}l >{\footnotesize}l}
+    Bishop\hspace{8em}              & Taylor Fluellen\hspace{8em}   & 202-555-0164  \\
+    \hline
+    1\textsuperscript{st} Counselor & Barney Jablonski              & 202-555-0119 \\
+    \hline
+    2\textsuperscript{nd} Counselor & Lanny Colbert                 & 202-555-0146 \\
+    \hline
+    Relief Society                  & Lorinda McCain                & 202-555-0136 \\
+    \hline
+    High Priests                    & Pablo Seabrook                & 202-555-0165 \\
+    \hline
+    Elders Quorum                   & Curtis Foushee                & 202-555-0174 \\
+    \hline
+    Primary                         & Ashlee Ahearn                 & 202-555-0126 \\
+    \hline
+    Sunday School                   & Everette Plemons              & 202-555-0110 \\
+    \hline
+    Young Women                     & Vanita Scipio                 & 202-555-0177 \\
+    \hline
+    Young Men                       & Emmett Saleem                 & 202-555-0144 \\
+    \hline
+    Ward Mission Leader             & Ellis Lange                   & 202-555-0119 \\
+    \hline
+    Missionaries                    & Elder \& Sister Frank         & 202-555-0180 \\
+                                    & Spanish Speaking              & 202-555-0135 \\
+                                    & English Speaking              & 202-555-0155 \\
+    \hline
+    Employment \& Welfare           & Julissa Hulin                 & 202-555-0142 \\
+    \hline
+    Ward Librarian                  & Merlin Vanderhoff             & 202-555-0124 \\
+    \hline
+    Ward Clerk                      & Duncan McGee                  & 202-555-0197 \\
+    \hline
+    Building Coordinator            & \multicolumn{2}{l}{\footnotesize{Lorinda Mccain: lorinda@email.com}}\\
+    \hline
+    Appointments                    & Bishop: Pasquale Overson     & 202-555-0159 \\
+                                    & Counselors: Asa Collado      & 202-555-0148 \\
+\end{tabular}
+\end{center}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Front Cover
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+    {\HUGE\MakeUppercase{Orem Utah Ward}}\\
+    {\large\MakeUppercase{of the}}\\
+    {\large\MakeUppercase{Utah Stake}}\\\vspace{0.5em}
+    {\smallskip\LARGE\MakeUppercase{Sacrament Meeting}}
+    \begin{figure}[ht]
+        {\hfill{\XeTeXpicfile "nelson.jpg" height 4in}\hfill}
+        \legend{``This is a nice quote''\newline--- \emph{Russell M. Nelson, October 2015 General Conference}}
+    \end{figure}
+\end{center}
+\renewcommand{\tabcolsep}{0.1in}
+\hspace{-1.25em}\begin{tabular}{c | c | c | c}
+\emph{Sacrament} & \emph{Sunday School} & \emph{Priesthood/Relief Society} & \emph{Primary}\\
+1{\scshape{pm}}--2:10{\scshape{pm}} & 2:20{\scshape{pm}}--3{\scshape{pm}} & 3:10{\scshape{pm}}--4{\scshape{pm}} & 2:20{\scshape{pm}}--4{\scshape{pm}}
+\end{tabular}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Announcements
+%%%%%%%%%%%%%%%%%%%%%%
+
+% Remove headers and footers
+\thispagestyle{empty}
+
+{\noindent\large\MakeUppercase{Announcements}}
+
+\mysection{Announcement 1}
+Here is my announcement. Please pay close attention and do not forget about this important announcement.
+
+\mysection{Announcement 2}
+Here is my announcement. Please pay close attention and do not forget about this important announcement.
+
+\mysection{Announcement 3}
+Here is my announcement. Please pay close attention and do not forget about this important announcement.
+
+\smallskip
+\noindent\begin{center}{\footnotesize{\emph{Please send any announcements to rachell.matter@email.com by Saturday at }9{\scshape{am}}.}}\end{center}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Program
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+    {\large\MakeUppercase{Orem Utah Ward}}\\
+    {\tiny\MakeUppercase{of}}\\
+    {\smalllogo\MakeUppercase{The Church of}}\\\vspace{0.4em}
+    {\largelogo\MakeUppercase{Jesus Christ}}\\
+    {\smalllogo\MakeUppercase{of Latter-day Saints}}\\\vspace{2em}
+    {\huge{March 22, 2016}}\\\vspace{2em}
+    \begin{tabular}{r @{\space\space\textperiodcentered\space\space} >{\itshape}l}
+        Presiding & Taylor Fluellen\\
+        Conducting & Taylor Fluellen\\
+        Chorister & Kory Honahni\\
+        Organist & Boyce Bowker\vspace{4em}\\
+
+        Opening Hymn & \#2 The Spirit of God\\
+        Invocation & Janett Ronco\vspace{1em}\\
+
+        \multicolumn{2}{c}{Ward Business}\vspace{1em}\\
+
+        Sacrament Hymn & \#100 Nearer, My God, to Thee\vspace{1em}\\
+
+        \multicolumn{2}{c}{Administration of the Sacrament by the Priesthood}\vspace{1em}\\
+
+        Speaker & Kandice Yarber\\
+        Speaker & Lynette Synder\vspace{1em}\\
+        Congregational Hymn & \#29 A Poor Wayfaring Man of Grief\vspace{1em}\\
+        Speaker & Michelle Speegle\vspace{1em}\\
+        Closing Hymn & \#85 How Firm a Foundation\\
+        Benediction & Catherine Armbruster
+    \end{tabular}
+\end{center}
+
+\end{document}
