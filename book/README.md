@@ -30,22 +30,22 @@ Many of the sizes below are not available in the `memoir` class but were at one 
 * `ustrade`: 9 x 6 in
 
 #Dependencies
-##Required Packages
+##Required LaTeX Packages
 
-1. `enumitem`
-2. `fontspec`
-3. `lettrine`
-4. `memoir`
-5. `microtype`
-6. `xfrac`
+1. `enumitem`: Prettier bulleted lists
+2. `fontspec`: Use system fonts
+3. `lettrine`: Allow use of [drop caps](https://en.wikipedia.org/wiki/Initial#Types_of_initial)
+4. `memoir`: Eases the process of making pretty documents
+5. `microtype`: Fine-tuned typographical control of page elements
+6. `xfrac`: Slanted, inline fractions
 
 
-##Optional Packages
+##Optional LaTeX Packages
 If you will be including a family tree drawing in your document, the following packages are required:
 
-1. `pstricks`
-2. `pst-node`
-3. `pst-tree`
+1. `pstricks`: Allows inclusion of PostScript drawings directly in LaTeX document
+2. `pst-node`: Allows graphically connecting information without knowing in advance the actual positions of items to be connected
+3. `pst-tree`: A high-level tool for making tree and node diagrams
 
 #TODO
 * The paper sizes in the `memoir` class are mutually exclusive and only one can be called at a time. `bringhurst` allows multiple paper sizes to be called but only the last one will be used. Should throw an error if you call mutually exclusive options.
@@ -53,12 +53,12 @@ If you will be including a family tree drawing in your document, the following p
 
 #Font Information
 ##Introduction
-This template references two fonts: Minion Pro and Inconsolata. To use different fonts, change lines 9, 10, and 11 in `main.tex`.
+This template references two fonts: Minion Pro and Inconsolata. To use different fonts, change lines 9, 10, and 11 of `main.tex`.
 
-##[Minion Pro](https://typekit.com/fonts/minion-pro)
+##[Minion Pro](https://typekit.com/fonts/minion-pro) (License required)
 “Minion is an Adobe Originals typeface designed by Robert Slimbach. It was inspired by classical, old style typefaces of the late Renaissance, a period of elegant, beautiful, and highly readable type designs. Minion Pro exhibits the aesthetic and functional qualities that make text type highly readable, yet is also suitable for display settings.”
 
-##[Inconsolata](http://levien.com/type/myfonts/inconsolata.html)
+##[Inconsolata](http://levien.com/type/myfonts/inconsolata.html) ([Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&item_id=OFL&_sc=1))
 “Inconsolata is my first serious original font release. It is a monospace font, designed for code listings and the like, in print. There are a great many ‘programmer fonts,’ designed primarily for use on the screen, but in most cases do not have the attention to detail for high resolution rendering.
 
 “Inconsolata draws from many inspirations and sources. I was particularly struck by the beauty of Luc(as) de Groot’s Consolas, which is his monospaced design for Microsoft’s upcoming Vista release. This font, similar to his earlier TheSansMono, demonstrated clearly to me that monospaced fonts do not have to suck.
